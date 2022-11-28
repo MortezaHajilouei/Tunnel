@@ -2,7 +2,6 @@
 // const net = require('net');
 
 // const app = express();
-// const SocketHandler = require('./SocketHandler')
 
 // const server = net.createServer(socket => {
 //   console.log(socket)
@@ -20,6 +19,7 @@
 const app = require('express')();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
+const SocketHandler = require('./SocketHandler')
 
 app.all(function (req, res, next) {
   res.send('sstat as');
