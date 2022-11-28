@@ -1,16 +1,14 @@
 const express = require('express');
+const net = require('net');
+
 const app = express();
- 
-app.get('/', (req, res) => {
-  res
-    .status(200)
-    .send('Hello server is running')
-    .end();
-});
- 
-// Start the server
+const SocketHandler = require('./SocketHandler') 
 const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
-  console.log(`App listening on port ${PORT}`);
-  console.log('Press Ctrl+C to quit.');
+ 
+const server = net.createServer(socket => {
+  new SocketHandler(socket, {}).handle();
+});
+
+server.listen(PORT, function() {
+  console.log(`Listening on port ${PORT}`);
 });
