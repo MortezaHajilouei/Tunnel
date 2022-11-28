@@ -13,3 +13,6 @@ const server = net.createServer(socket => {
 server.listen(PORT, function () {
   console.log(`Listening on port ${PORT}`);
 });
+
+
+app.listen(80)
