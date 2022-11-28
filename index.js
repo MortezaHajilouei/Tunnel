@@ -22,7 +22,7 @@ const app = require('express')();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
-app.get('/', function(req, res) {
+app.all(function(req, res,next) {
    res.send('index.html');
 });
 
