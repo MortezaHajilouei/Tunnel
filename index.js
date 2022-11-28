@@ -8,7 +8,6 @@
 //   console.log(socket)
 //   new SocketHandler(socket, {}).handle();
 // });
-SSS
 // server.listen(8080, function () {
 //   console.log(`Listening on port ${8080}`);
 // });
@@ -23,7 +22,7 @@ const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
 app.all(function (req, res, next) {
-  res.send('index.html');
+  res.send('sstat as');
 });
 
 //Whenever someone connects this gets executed
@@ -31,7 +30,7 @@ io.on('connection', function (socket) {
   new SocketHandler(socket, {}).handle();
 });
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 5000
 
 http.listen(PORT, function () {
   console.log('listening on *:PORT');
